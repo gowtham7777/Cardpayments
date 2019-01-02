@@ -1,29 +1,11 @@
-<p>
-  cards works!
-</p>
 
-<div style="padding-top:40px">
-</div>
 <div>
-<button
-  class="btn btn-primary" type="submit"
-  style="margin-top:40px;margin-left:240px"
-  > Add Adjustment
-</button>
-</div>
-
-<hr style="margin-bottom:0px;margin-left:4px;margin-right:10px;height:1px;border:none;color:#000000;background-color:#000000;">
-
-<div *ngFor="let payment of payments;let i =index">
 <!-- edit mode -->
-<app-cards-display [selectedPayment]="payment"></app-cards-display>
-
-</div>
-<!-- <div class="container" id="editComponent" *ngIf="showEditView">
+<div class="container" id="editComponent" *ngIf="showEditView">
 <div class="row">
       <div class="col-24"> 
             <div class="title-small" style="padding-top:20px;padding-left: 20px">
-            Change Adjustment | Code  Here
+            Change Adjustment | {{selectedPayment.paymentCode}}
             </div>
       </div>
  </div>
@@ -37,10 +19,15 @@
                   id="inputEmail" 
                   class="form-control" 
                   placeholder="Enter Price" 
+                  value="{{selectedPayment.amount}}"
                   required="" 
                   autofocus=""/>
                  </div>
                  <button type="button"style="margin-left:40px;" class="btn btn-primary">Submit</button>
+                 <button type="button" 
+                         style="margin-left:40px;"  
+                         class="btn btn-light" (click)="cancelEditView()">Cancel</button>
+                
                 </div>
         </div>
         <div class="col"> 
@@ -49,18 +36,24 @@
             </div>
       </div>
     </div>
-  </div> -->
+  </div>
 
   <!-- content-display -->
-    <!-- <div class="container" id="addComponent">
-       -->
+    <div class="container" id="addComponent" *ngIf="!displayContent">
+        <!-- <div *ngFor="let payment of payments;let i =index">
+            <div [ngStyle]="{'padding':'23px 2px 18px 16px'}"> -->
+              <!-- <span><i class="fa fa-flag"></i></span> -->
+              <!-- <span [ngStyle]="{'font-size':'16px','color':'#5a5a5a'}">
+                </span>
+            </div>
+          </div> -->
 
-        <!-- <div class="row align-items-center" style="padding-top: 10px;padding-left:20px">
+        <div class="row align-items-center" style="padding-top: 10px;padding-left:20px">
            <div class="col">
               <div>
-                <span style="color:#303133"> {{payment.paymentDesc}}</span>
-                <span style="padding-left: 60px">{{payment.paymentCode}}</span>  
-                <span style="padding-left: 60px">{{payment.amount | currency}}</span>
+                <span style="color:#303133"> {{selectedPayment.paymentDesc}}</span>
+                <span style="padding-left: 60px">{{selectedPayment.paymentCode}}</span>  
+                <span style="padding-left: 60px">{{selectedPayment.amount | currency}}</span>
                 <button class="btn btn-link" 
                         style="padding-left: 60px" 
                         (click)="onAdd()">Add</button>
@@ -73,11 +66,11 @@
               <div class="col offset"></div>
            </div>
     
-    </div> -->
+    </div>
 
     
     <!-- new component -->
-    <!-- <div class="container" id="newComponent" *ngIf="showNewItem">
+    <div class="container" id="newComponent" *ngIf="showNewItem">
       
         <div class="row align-items-center" style="padding-top: 10px;padding-left:20px">
             <div class="col"> 
@@ -111,7 +104,7 @@
                      <button type="button"style="margin-left:40px;" 
                              class="btn btn-primary">Submit</button>
                      <button type="button"style="margin-left:40px;" 
-                             class="btn btn-light">Cancel</button>
+                             class="btn btn-light" (click)="hideAddComponent()">Cancel</button>
                     </div>
             </div>
     
@@ -120,7 +113,7 @@
 
 </div>
 
-</div> -->
+</div>
 
 
   

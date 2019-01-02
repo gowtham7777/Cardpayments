@@ -5,13 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CardsComponent } from './cards/cards.component';
+import { DisplayComponent } from './cards/display/display.component';
 import { PaymentsComponent } from './payments/payments.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardsComponent,
-    PaymentsComponent
+    PaymentsComponent,
+    DisplayComponent
   ],
   imports: [
     BrowserModule,
