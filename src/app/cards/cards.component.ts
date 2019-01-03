@@ -13,9 +13,9 @@ export class CardsComponent implements OnInit {
   payment: Payment = {
     id: 1,
     amount: 100,
-    paymentCode: "MXLS",
-    paymentDesc: "Test Description",
-    startDate: new Date("12/12/1900")
+    paymentCode: "GLPS",
+    paymentDesc: "Gold Rendered",
+    startDate: new Date("12/1/2010")
   };
 
   paymentArray: Payment[] = [{
@@ -23,14 +23,14 @@ export class CardsComponent implements OnInit {
     amount: 100,
     paymentCode: "MXLS",
     paymentDesc: "Test Description",
-    startDate: new Date("12/12/1900")
+    startDate: new Date("12/12/2012")
   },
   {
     id: 2,
     amount: 200,
     paymentCode: "RSTL",
     paymentDesc: "REST  Description",
-    startDate: new Date("11/11/1900")
+    startDate: new Date("11/11/2010")
   }];
 
   
@@ -40,6 +40,11 @@ export class CardsComponent implements OnInit {
   ngOnInit() {
     this.payments = this.paymentArray;
     this.payments.push(this.payment);
+  }
+
+  addNewDisplayItem(event){
+    console.log(event)
+    this.payments.push(event);
   }
   // onAdd():void{
   //   this.showNewItem = !this.showNewItem;

@@ -19,14 +19,19 @@
                   id="inputEmail" 
                   class="form-control" 
                   placeholder="Enter Price" 
-                  value="{{selectedPayment.amount}}"
+                  [(ngModel)]="selectedPayment.amount"
                   required="" 
                   autofocus=""/>
                  </div>
-                 <button type="button"style="margin-left:40px;" class="btn btn-primary">Submit</button>
+                 <button type="button"
+                         style="margin-left:40px;" 
+                         class="btn btn-primary"
+                         (click)="onNewItemAdded()"> 
+                 Submit</button>
                  <button type="button" 
                          style="margin-left:40px;"  
-                         class="btn btn-light" (click)="cancelEditView()">Cancel</button>
+                         class="btn btn-light" 
+                         (click)="cancelEditView()">Cancel</button>
                 
                 </div>
         </div>
@@ -76,21 +81,20 @@
             <div class="col"> 
                 <div class="row">
 
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" 
-                                type="button" 
-                                id="dropdownMenu2" 
-                                data-toggle="dropdown" 
-                                aria-haspopup="true" aria-expanded="false">
-                          Dropdown
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-danger">Action</button>
+                        <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <span class="sr-only">Toggle Dropdown</span>
                         </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                          <button class="dropdown-item" type="button">Action</button>
-                          <button class="dropdown-item" type="button">Another action</button>
-                          <button class="dropdown-item" type="button">Something else here</button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Separated link</a>
                         </div>
                       </div>
-                      
 
                   <div class="title-small" style="padding-left: 40px;">
                       <input type="email" 
@@ -98,11 +102,12 @@
                       id="inputEmail" 
                       class="form-control" 
                       placeholder="Enter Price" 
+                      [(ngModel)]="amount"
                       required="" 
                       autofocus=""/>
                      </div>
                      <button type="button"style="margin-left:40px;" 
-                             class="btn btn-primary">Submit</button>
+                             class="btn btn-primary" (click)="addNewRow()">Submit</button>
                      <button type="button"style="margin-left:40px;" 
                              class="btn btn-light" (click)="hideAddComponent()">Cancel</button>
                     </div>
