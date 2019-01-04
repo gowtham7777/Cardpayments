@@ -3,12 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 
  import { CardsComponent }   from './cards/cards.component';
  import { PaymentsComponent } from './payments/payments.component';
+import { AppForms } from './appForms/appForms.component';
  // import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'payment', pathMatch: 'full' },
     { path: 'cards', component: CardsComponent },
-   { path: 'payments', component: PaymentsComponent }
+   { path: 'payments', component: PaymentsComponent },
+   { path: 'forms', component: AppForms }
 ];
 
 @NgModule({
