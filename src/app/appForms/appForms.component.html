@@ -1,4 +1,24 @@
-<mat-card class="example-card">
+
+
+
+ <mat-table #table [dataSource]="dataSource" matSort>
+
+  <ng-container matColumnDef="{{column.id}}" *ngFor="let column of columnNames">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> {{column.value}} </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element[column.id]}} </mat-cell>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+
+<!-- <div class='loadExcelInput'>
+  <p>Open Excel File</p>
+<input type="file" name="files[]" multiple id="jsonFile" accept=".xlsx" (change)="onFileChange($event)" />
+</div> -->
+
+<!-- mat material  -->
+<!-- <mat-card class="example-card">
         <mat-card-header>
           <div mat-card-avatar class="example-header-image"></div>
           <mat-card-title>Shiba Inu</mat-card-title>
@@ -16,4 +36,39 @@
           <button mat-button>LIKE</button>
           <button mat-button>SHARE</button>
         </mat-card-actions>
-      </mat-card>
+      </mat-card> -->
+
+      <!-- <mat-toolbar color="primary">
+        <button mat-button (click)="sidenav.open ()" ><mat-icon>menu</mat-icon></button>
+        <span>News Headlines</span>  
+        <span class="example-spacer"></span>
+        <button mat-button [matMenuTriggerFor]="appMenu"><mat-icon>settings</mat-icon></button>
+      </mat-toolbar>
+      <mat-menu #appMenu="matMenu">
+        <button mat-menu-item> Settings </button>
+        <button mat-menu-item> Help </button>
+      </mat-menu>
+         -->
+        <!-- <div>
+          <mat-toolbar color="primary">
+            <span>Angular Material Tutorial</span>
+            <button mat-icon-button [mat-menu-trigger-for]="menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+          </mat-toolbar>
+          <mat-menu x-position="before" #menu="matMenu">
+            <button mat-menu-item>About</button>
+            <button mat-menu-item>Contact</button>
+          </mat-menu>
+          <mat-card >
+            <button mat-raised-button>Regular</button>
+            <button mat-raised-button color="primary">primary</button>
+            <button mat-raised-button color="accent">accent</button>
+          </mat-card>
+          <form class="form-center">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Favorite food" value="Pizza">
+            </mat-form-field>
+          </form>
+        </div> -->
+      

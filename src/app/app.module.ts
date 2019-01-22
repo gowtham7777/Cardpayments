@@ -14,6 +14,8 @@ import {
   MatRadioModule,      
   MatSelectModule,      
   MatOptionModule,      
+  MatTableModule,
+  MatSortModule,
   MatSlideToggleModule,ErrorStateMatcher,ShowOnDirtyErrorStateMatcher      
 } from '@angular/material';     
 
@@ -25,6 +27,7 @@ import { CardsComponent } from './cards/cards.component';
 import { DisplayComponent } from './cards/display/display.component';
 import { PaymentsComponent } from './payments/payments.component';
 import { AppForms } from './appForms/appForms.component';
+ 
 
 @NgModule({
   declarations: [
@@ -39,10 +42,10 @@ import { AppForms } from './appForms/appForms.component';
     AppRoutingModule,
     NgbModule,
     FormsModule,
+    MatToolbarModule,
     MatButtonModule,  
     BrowserAnimationsModule,    
-  MatMenuModule,      
-  MatToolbarModule,      
+  MatMenuModule,       
   MatIconModule,      
   MatCardModule,      
   MatFormFieldModule,      
@@ -52,6 +55,8 @@ import { AppForms } from './appForms/appForms.component';
   MatRadioModule,      
   MatSelectModule,      
   MatOptionModule,      
+  MatTableModule,
+  MatSortModule,
   MatSlideToggleModule    
   ],
   providers: [      
