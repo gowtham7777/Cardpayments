@@ -25,3 +25,11 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+#mockData.json
+#on root, run command, json-server mockData.json
+#runs on localhost:3000 using  json-server 
+#json-server --watch mockData.json to reload automatically the browser when the JSON file is #modified
+#Installation npm install -g json-server
+#npm install --save @angular/material @angular/cdk @angular/animations
