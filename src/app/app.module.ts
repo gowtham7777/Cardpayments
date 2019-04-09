@@ -28,7 +28,6 @@ import { DisplayComponent } from './cards/display/display.component';
 import { PaymentsComponent } from './payments/payments.component';
 import { AppForms } from './appForms/appForms.component';
  
-
 @NgModule({
   declarations: [
     AppComponent,
