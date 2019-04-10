@@ -4,13 +4,15 @@ import { RouterModule, Routes } from '@angular/router';
  import { CardsComponent }   from './cards/cards.component';
  import { PaymentsComponent } from './payments/payments.component';
 import { AppForms } from './appForms/appForms.component';
+import { AppPdfGenComponent } from './app-pdf-gen/app-pdf-gen.component';
  // import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'payment', pathMatch: 'full' },
     { path: 'cards', component: CardsComponent },
    { path: 'payments', component: PaymentsComponent },
-   { path: 'forms', component: AppForms }
+   { path: 'forms', component: AppForms },
+   { path: 'pdf', component:  AppPdfGenComponent}
 ];
 
 @NgModule({

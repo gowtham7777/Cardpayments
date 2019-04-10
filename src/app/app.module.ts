@@ -27,6 +27,7 @@ import { CardsComponent } from './cards/cards.component';
 import { DisplayComponent } from './cards/display/display.component';
 import { PaymentsComponent } from './payments/payments.component';
 import { AppForms } from './appForms/appForms.component';
+import { AppPdfGenComponent } from './app-pdf-gen/app-pdf-gen.component';
  
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { AppForms } from './appForms/appForms.component';
     CardsComponent,
     PaymentsComponent,
     DisplayComponent,
-    AppForms
+    AppForms,
+    AppPdfGenComponent
   ],
   imports: [
     BrowserModule,

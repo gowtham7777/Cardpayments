@@ -28,8 +28,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 #mockData.json
-#on root, run command, json-server mockData.json
-#runs on localhost:3000 using  json-server 
+on root, run command, json-server mockData.json, runs on localhost:3000 using  json-server 
+
 #json-server --watch mockData.json to reload automatically the browser when the JSON file is #modified
 #Installation npm install -g json-server
-#npm install --save @angular/material @angular/cdk @angular/animations
+if module exists and unable to pick it up, delete node_modules folder and run npm install 
