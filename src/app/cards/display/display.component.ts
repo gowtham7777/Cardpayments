@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {Payment} from '../../model/payment';
+import { UpdateTotalService } from '../../services/updateTotal.service';
 
 @Component({
   selector: 'app-cards-display',
@@ -20,8 +21,17 @@ export class DisplayComponent implements OnInit {
   displayContent: Boolean = false;
   payment: Payment;
   amount:number;
+  id:number = 100;
+  selectedAdj: Object = null;
+  adjustments:Object[] =  [
+          { value: null, text: 'No Value' },
+          { value: 'KXIP', text: 'kings' },
+          { value: 'MI', text: 'Mumbais' },
+          { value: { C: '3PO' }, text: 'captains' },
+          { value: 'CSK', text: 'super kings', disabled: true }
+        ]
 
-  constructor() { }
+  constructor(private updateTotal:UpdateTotalService) { }
 
   ngOnInit() {
    // this.payments = this.paymentArray;
@@ -58,9 +68,11 @@ export class DisplayComponent implements OnInit {
     if(this.amount<0)return;
     this.showNewItem = !this.showNewItem;
     this.newPayment.amount = this.amount;
+    this.newPayment.id = 12;
     this.newPayment.paymentCode = "KXIP";
-    this.newPayment.paymentDesc = "Miscellesous Item";
-    this.savePayment.emit(this.newPayment);
+    this.newPayment.paymentDesc = this.selectedAdj as string;
+   // this.savePayment.emit(this.newPayment);
+    this.updateTotal.sendMessage( new Payment(this.id++,this.amount,"RSTL",this.selectedAdj as string, new Date("11/11/2010")));
   }
 
 }

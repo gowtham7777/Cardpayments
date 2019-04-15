@@ -56,8 +56,8 @@
         <div class="row align-items-center" style="padding-top: 10px;padding-left:20px">
            <div class="col">
               <div>
-                <span style="color:#303133"> {{selectedPayment.paymentDesc}}</span>
-                <span style="padding-left: 60px">{{selectedPayment.paymentCode}}</span>  
+                <span style="color:#303133;width:100px"> {{selectedPayment.paymentDesc | uppercase}}</span>
+                <span style="padding-left: 60px;width:100px">{{selectedPayment.paymentCode}}</span>  
                 <span style="padding-left: 60px">{{selectedPayment.amount | currency}}</span>
                 <button class="btn btn-link" 
                         style="padding-left: 60px" 
@@ -81,8 +81,13 @@
             <div class="col"> 
                 <div class="row">
 
-
-                    <div class="btn-group">
+                  <select style="width:250px" class="form-control" [(ngModel)]="selectedAdj">
+                    <option *ngFor="let adjustment of adjustments">
+                    {{adjustment.text}}
+                    </option>
+                </select>
+                              
+                    <!-- <div class="btn-group">
                         <button type="button" class="btn btn-danger">Action</button>
                         <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           <span class="sr-only">Toggle Dropdown</span>
@@ -94,7 +99,7 @@
                           <div class="dropdown-divider"></div>
                           <a class="dropdown-item" href="#">Separated link</a>
                         </div>
-                      </div>
+                      </div> -->
 
                   <div class="title-small" style="padding-left: 40px;">
                       <input type="email" 
