@@ -1,0 +1,27 @@
+import { Component, OnInit } from '@angular/core';
+import { studentService } from '../services/studentService';
+
+@Component({
+  selector: 'app-studend-info',
+  templateUrl: './studend-info.component.html',
+  styleUrls: ['./studend-info.component.scss']
+})
+export class StudendInfoComponent implements OnInit {
+
+  constructor(private studentService:studentService) {
+
+    // this.programForm = this.formBuilder.group({
+    //   'prog_type': [null, Validators.required],
+    //   'program': [null, Validators.compose([Validators.required, Validators.minLength(4), Validators.maxLength(4)])],
+    //   'program_name': [null, Validators.required],
+    //   'priority': [null],
+    //   'exit_item': [null],
+    //   'dpr_active': false
+    // })
+    studentService.searchNames();
+
+  }
+  ngOnInit() {
+  }
+
+}

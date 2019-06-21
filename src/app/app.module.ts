@@ -28,6 +28,11 @@ import { DisplayComponent } from './cards/display/display.component';
 import { PaymentsComponent } from './payments/payments.component';
 import { AppForms } from './appForms/appForms.component';
 import { AppPdfGenComponent } from './app-pdf-gen/app-pdf-gen.component';
+import { StudendInfoComponent } from './studend-info/studend-info.component';
+import { studentService } from './services/studentService';
+import { PaymentService } from './services/payments.service';
+import { UpdateTotalService } from './services/updateTotal.service';
+import { HttpClientModule } from '@angular/common/http';
  
 @NgModule({
   declarations: [
@@ -36,7 +41,8 @@ import { AppPdfGenComponent } from './app-pdf-gen/app-pdf-gen.component';
     PaymentsComponent,
     DisplayComponent,
     AppForms,
-    AppPdfGenComponent
+    AppPdfGenComponent,
+    StudendInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +52,7 @@ import { AppPdfGenComponent } from './app-pdf-gen/app-pdf-gen.component';
     MatToolbarModule,
     MatButtonModule,  
     BrowserAnimationsModule,    
+    HttpClientModule,
   MatMenuModule,       
   MatIconModule,      
   MatCardModule,      
@@ -60,7 +67,7 @@ import { AppPdfGenComponent } from './app-pdf-gen/app-pdf-gen.component';
   MatSortModule,
   MatSlideToggleModule    
   ],
-  providers: [      
+  providers: [      studentService, PaymentService, UpdateTotalService,
     {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}      
   ], 
   bootstrap: [AppComponent]
