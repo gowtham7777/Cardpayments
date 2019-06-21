@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { studentService } from '../services/studentService';
+import { Observable } from '../../../node_modules/rxjs';
 
 @Component({
   selector: 'app-studend-info',
@@ -8,6 +9,7 @@ import { studentService } from '../services/studentService';
 })
 export class StudendInfoComponent implements OnInit {
 
+  public students:any[];
   constructor(private studentService:studentService) {
 
     // this.programForm = this.formBuilder.group({
@@ -18,10 +20,15 @@ export class StudendInfoComponent implements OnInit {
     //   'exit_item': [null],
     //   'dpr_active': false
     // })
-    studentService.searchNames();
-
-  }
+   
+    }
   ngOnInit() {
+    this.getStudents();
   }
 
+  getStudents():void{
+    this.studentService.searchNames()
+    .subscribe(students => {this.students = students;
+                            console.log(this.students.length)});
+  }
 }

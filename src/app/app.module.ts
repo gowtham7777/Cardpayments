@@ -1,24 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import {      
-  MatButtonModule,      
-  MatMenuModule,      
-  MatToolbarModule,      
-  MatIconModule,      
-  MatCardModule,      
-  MatFormFieldModule,      
-  MatInputModule,      
-  MatDatepickerModule,      
-  MatNativeDateModule,      
-  MatRadioModule,      
-  MatSelectModule,      
-  MatOptionModule,      
-  MatTableModule,
-  MatSortModule,
-  MatSlideToggleModule,ErrorStateMatcher,ShowOnDirtyErrorStateMatcher      
-} from '@angular/material';     
-
+import { MaterialModule } from './material_modules/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -33,6 +16,8 @@ import { studentService } from './services/studentService';
 import { PaymentService } from './services/payments.service';
 import { UpdateTotalService } from './services/updateTotal.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AppErrorHandler }     from './app-error-handler';
+import { MessageService }       from './message.service';
  
 @NgModule({
   declarations: [
@@ -49,26 +34,12 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    MatToolbarModule,
-    MatButtonModule,  
     BrowserAnimationsModule,    
     HttpClientModule,
-  MatMenuModule,       
-  MatIconModule,      
-  MatCardModule,      
-  MatFormFieldModule,      
-  MatInputModule,      
-  MatDatepickerModule,      
-  MatNativeDateModule,      
-  MatRadioModule,      
-  MatSelectModule,      
-  MatOptionModule,      
-  MatTableModule,
-  MatSortModule,
-  MatSlideToggleModule    
+    MaterialModule
   ],
-  providers: [      studentService, PaymentService, UpdateTotalService,
-    {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}      
+  providers: [  MessageService, AppErrorHandler,studentService, PaymentService, UpdateTotalService
+        
   ], 
   bootstrap: [AppComponent]
 })

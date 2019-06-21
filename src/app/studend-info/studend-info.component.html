@@ -1,3 +1,194 @@
-<p>
+<!-- <p>
   studend-info works!
-</p>
+</p> -->
+
+
+<div class="row">
+
+  <!-- Profile tiles display div begin -->
+  <span style="padding-left:40px">students length is {{students.length}}</span>
+
+  <div>
+      <mat-card style="margin-top: 20px">
+          <!-- <div> -->
+
+          <mat-tab-group>
+              <mat-tab label="Accounts">
+                  <input type="hidden" name="search_param" value="all" id="search_param">
+                  <form >
+                      <input type="text" class="form-control" name="x" 
+                            placeholder="Search term...">
+                  </form>
+                  <form class="example-form">
+                      <mat-form-field class="example-full-width">
+                          <input matInput placeholder="Search for an account" name="x" 
+                           autocomplete="off">
+
+                      </mat-form-field>
+                      <mat-card>
+
+                          <div class="table-responsive table table-hover ">
+                              <thead>
+                                  <tr>
+                                      <th class="dropdownHeading"></th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr class="hover-link" *ngFor="let acc of students " 
+                                    >
+                                      <td>
+                                          <Span>{{acc.name}}</Span>
+                                      </td>
+                                      <td>
+                                          <span>{{acc.username}}</span>
+                                      </td>
+                                  </tr>
+                              </tbody>
+                          </div>
+                          <div class="table-responsive table table-hover ">
+                              <thead>
+                                  <tr>
+                                      <th class="dropdownHeading"></th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr class="hover-link">
+                                      <td>
+                                          <Span></Span>
+                                      </td>
+                                      <td>
+                                          <span></span>
+                                      </td>
+                                  </tr>
+                              </tbody>
+                          </div>
+                          <div class="table-responsive table table-hover ">
+                              <thead>
+                                  <tr>
+                                      <th class="dropdownHeading"></th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr class="hover-link"  (click)="selectCategory(group.desc,group.category)">
+                                      <td>
+                                          <Span>group.desc</Span>
+                                      </td>
+                                      <td>
+                                          <span>group.label</span>
+                                      </td>
+                                  </tr>
+                              </tbody>
+                          </div>
+                          <div class="table-responsive table table-hover ">
+                              <thead>
+                                  <tr>
+                                      <th class="dropdownHeading"></th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr class="hover-link">
+                                      <td>
+                                          <Span></Span>
+                                      </td>
+                                      <td>
+                                          <span></span>
+                                      </td>
+                                  </tr>
+                              </tbody>
+                          </div>
+                      </mat-card>
+
+                  </form>
+
+              </mat-tab>
+              <mat-tab label="Profiles">
+                  <form class="example-form" (keydown)="keyDownFunction($event,'Profiles')">
+                      <mat-form-field class="example-full-width">
+                          <input matInput placeholder="Search for a Profile" name="x" autocomplete="off">
+                      </mat-form-field>
+                      <mat-card>
+                      </mat-card>
+                  </form>
+              </mat-tab>
+              <!-- || searchService.getFormChange()  -->
+              <mat-tab label="Programs">
+                  <form class="example-form" (keydown)="keyDownFunction($event,'Programs')">
+                      <mat-form-field class="example-full-width">
+                          <input matInput placeholder="Search for a Program" name="x"
+                            autocomplete="off">
+                          <!-- (ngModelChange)="getPrograms()" -->
+                      </mat-form-field>
+                      <mat-card>
+                      </mat-card>
+
+                  </form>
+              </mat-tab>
+          </mat-tab-group>
+          <!-- Search dropdown div end -->
+      </mat-card>
+  </div>
+  <div style="margin-top: 20px;">
+      <!-- <mat-card class="profile-prog-card"> -->
+          <!-- <mat-toolbar>
+              <h3 class="mdc-typography--headline3" id="target-heading">Profiles</h3>
+          </mat-toolbar> -->
+          <!-- <ng-container  > -->
+              <!-- <h2>Profiles</h2> -->
+              <!-- <div class="container" *ngFor='let profiles of profileList; let i= index;' style="margin-top:20px;">
+                  <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="1.5%" class="profile-card-divcls">
+                      <mat-card *ngFor='let profile of profiles' class="profile-flex profile-card-cls hover-link" (click)="selectedProfile(profile,i)"
+                       fxFlex="20%" [ngClass]="{ 'selected-profile-cls': selectedProfileObj.profile== profile.profile }">
+                          <a class="form-check">
+                               <h2 fxFlex="30%" class="mat-display-2 at-mb-10 at-tw-300 mat-headline profile-heading profile-card-cls-title" style="color:#005a8c;">{{profile.profile}} </h2> -->
+                   <!--            <i class="material-icons edit-icon hover-link" matTooltip="Profile history" (click)="openProfileSnackBar($event,profile)">
+                                      history
+                                      </i>
+                              <i class="material-icons edit-icon hover-link" matTooltip="Edit Profile name" [ngClass]="{' hover-disable': searchService.getFormEdit() || searchService.getFormChange()}" 
+                               (click)="editProfile($event,profile)">
+                                  edit
+                              </i>
+                              <i class="material-icons edit-icon hover-link" matTooltip="Save Profile" *ngIf="profile.isDescEdit" (click)="saveProfie($event,profile)">
+                                  save
+                              </i>
+                              <ng-container>
+                                  <input matInput placeholder="Profile description" (click)="onProfileInput($event)" class="profile-desc-inputcls" [(ngModel)]="profile.description">
+                              </ng-container>
+                              <h4 class="profile-description" style="color:#005a8c;">{{profile.description}}</h4>
+                              <mat-toolbar class="profile-toolbar">Active Programs: {{profile.programs?.length || 0}}</mat-toolbar>
+                          </a>
+                      </mat-card>
+                  </div> -->
+
+                  <!-- <app-programs  [selectedProfileObj]="selectedProfileObj"></app-programs>
+               -->
+                <!-- </div>
+          </ng-container>
+      </mat-card> -->
+  </div>
+
+  <ng-container>
+      <!-- Program tables -->
+      <!-- <mat-card class="profile-prog-card" style="margin-top: 20px;">
+          <mat-toolbar>
+              <h3 class="mdc-typography--headline3" id="target-heading">Programs</h3>
+          </mat-toolbar>
+          <div class="container" *ngFor='let programs of programsList; let i= index;' style="margin-top:20px;">
+              <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="1.5%" class="profile-card-divcls">
+                  <mat-card *ngFor='let program of programs' class="profile-flex hover-link-tile profile-card-cls" (click)="onChainsToggle(program)" fxFlex="20%">
+                      <i class="material-icons  program-edit-icon hover-link" matTooltip="Program history" (click)="openSnackBar($event,program)">
+                                  history
+                                  </i>
+                      <i class="material-icons program-edit-icon hover-link" matTooltip="Edit Program details" (click)="showUpdateProgramModel($event,program)">
+                                  edit
+                              </i>
+                      <h2 fxFlex="30%" class="mat-display-2 at-mb-8 at-tw-300 mat-headline profile-heading profile-card-cls-title" style="color:#005a8c;">{{program.program}}
+                      </h2>
+                      <p class=" profile-description">{{program.program_name}}</p>
+                      <mat-toolbar class="profile-toolbar">Total Items: {{program.item_count}}</mat-toolbar>
+                  </mat-card>
+              </div>
+          </div>
+      </mat-card> -->
+  </ng-container>
+
+</div>
