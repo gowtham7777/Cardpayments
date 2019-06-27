@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { studentService } from '../services/studentService';
-import { Observable } from '../../../node_modules/rxjs';
 
 @Component({
   selector: 'app-studend-info',
