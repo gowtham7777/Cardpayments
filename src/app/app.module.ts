@@ -18,6 +18,7 @@ import { UpdateTotalService } from './services/updateTotal.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AppErrorHandler }     from './app-error-handler';
 import { MessageService }       from './message.service';
+import { TemplateDrivenFormsComponent } from './template-driven-forms/template-driven-forms.component';
  
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MessageService }       from './message.service';
     DisplayComponent,
     AppForms,
     AppPdfGenComponent,
-    StudendInfoComponent
+    StudendInfoComponent,
+    TemplateDrivenFormsComponent
   ],
   imports: [
     BrowserModule,

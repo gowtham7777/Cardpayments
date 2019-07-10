@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppForms } from './appForms/appForms.component';
 import { AppPdfGenComponent } from './app-pdf-gen/app-pdf-gen.component';
 import { StudendInfoComponent } from './studend-info/studend-info.component';
+import { TemplateDrivenFormsComponent } from './template-driven-forms/template-driven-forms.component';
  // import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
 
 const routes: Routes = [
@@ -14,7 +15,9 @@ const routes: Routes = [
    { path: 'payments', component: PaymentsComponent },
    { path: 'forms', component: AppForms },
    { path: 'pdf', component:  AppPdfGenComponent},
-   { path: 'students', component:  StudendInfoComponent}
+   { path: 'students', component:  StudendInfoComponent},
+   { path: 'newUser', component:  TemplateDrivenFormsComponent},
+   
 ];
 
 @NgModule({
