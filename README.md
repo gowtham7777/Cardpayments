@@ -1,3 +1,5 @@
+Download nodeJS and npm then angular cli, using npm install -g @angular/cli
+
 # SimplePaymentForm
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
