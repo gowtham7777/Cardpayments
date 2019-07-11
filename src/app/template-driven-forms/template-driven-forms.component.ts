@@ -15,6 +15,7 @@ export class TemplateDrivenFormsComponent implements OnInit {
 
    gender = ['please select one', 'Female', 'Male', 'X'];
   model = new User(1,'','',0,'');
+  name = '';
 
   submit(){
 
