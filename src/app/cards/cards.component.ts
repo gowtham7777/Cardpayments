@@ -52,7 +52,9 @@ export class CardsComponent implements OnInit {
 //The reducer function takes four arguments:
 //Accumulator (acc) Current Value (cur) Current Index (idx) Source Array (src)
   caluclateTotalPayments(){
-    this.totalPayment= this.payments.reduce((total, payment) => total as number + payment.amount as number,0); 
+    this.totalPayment= this.payments.reduce((total, payment) =>{ 
+      console.log("total is " + total + " payment amount is " + " " +  Number(payment.amount))
+      return total + Number(payment.amount)},0); 
     }
 
   addNewDisplayItem(event){
