@@ -7,6 +7,7 @@ import { AppForms } from './appForms/appForms.component';
 import { AppPdfGenComponent } from './app-pdf-gen/app-pdf-gen.component';
 import { StudendInfoComponent } from './studend-info/studend-info.component';
 import { TemplateDrivenFormsComponent } from './template-driven-forms/template-driven-forms.component';
+//import { FormsComponent } from './forms/forms.component';
  // import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
 
 const routes: Routes = [
@@ -16,7 +17,11 @@ const routes: Routes = [
    { path: 'forms', component: AppForms },
    { path: 'pdf', component:  AppPdfGenComponent},
    { path: 'students', component:  StudendInfoComponent},
-   { path: 'newUser', component:  TemplateDrivenFormsComponent},
+      // { path: 'diffForms', component:  FormsComponent,
+      //     children : [ { path: 'newUser', component:  TemplateDrivenFormsComponent},
+      //                  { path: 'forms', component:  AppForms} 
+      //                ]
+      // },
    
 ];
 

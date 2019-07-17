@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppErrorHandler }     from './app-error-handler';
 import { MessageService }       from './message.service';
 import { TemplateDrivenFormsComponent } from './template-driven-forms/template-driven-forms.component';
+import { FormsComponent } from './forms/forms.component';
  
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { TemplateDrivenFormsComponent } from './template-driven-forms/template-d
     AppForms,
     AppPdfGenComponent,
     StudendInfoComponent,
-    TemplateDrivenFormsComponent
+    TemplateDrivenFormsComponent,
+    FormsComponent
   ],
   imports: [
     BrowserModule,

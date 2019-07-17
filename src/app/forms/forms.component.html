@@ -1,0 +1,55 @@
+
+  <!-- <div class="collapse navbar-collapse" id="navbarText">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link"
+                 routerLink="/newUser">Template Driven
+                  <span class="sr-only"></span></a>
+            </div>
+          </div>
+        
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link"  
+                 routerLink="/forms">Reactive
+                  <span class="sr-only"></span></a>
+            </div>
+          </div>
+
+          </nav> -->
+
+          <!-- <div class="container">
+              <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" routerLink="/newUser">Template Driven</a>
+                <a class="navbar-brand" routerLink="/forms">Reactive</a>
+              </nav>
+          </div> -->
+
+          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="pills-Template-tab" 
+                  data-toggle="pill" href="/newUser" 
+                  role="tab" aria-controls="pills-home" 
+                  aria-selected="true">Template Driven
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" id="pills-reactive-tab" 
+                  data-toggle="pill" href="/forms" 
+                  role="tab" aria-controls="pills-profile" 
+                  aria-selected="false">Reactive
+                </a>
+              </li>
+
+              
+            </ul>
+
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" 
+                   id="pills-home" role="tabpanel" 
+                   aria-labelledby="pills-Template-tab"> <app-template-driven-forms></app-template-driven-forms></div>
+
+              <div class="tab-pane fade" id="pills-profile" 
+                  role="tabpanel" aria-labelledby="pills-reactive-tab">...</div>
+            </div>
