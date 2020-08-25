@@ -14,11 +14,11 @@
                     </span>
                 </div>
         
-  <div class="offset-4">
-      <mat-card style="margin-top: 20px">
+  <div class="offset-2">
+      <div style="margin-top: 20px">
           <!-- <div> -->
 
-          <mat-tab-group>
+          <mat-tab-group >
               <mat-tab label="Accounts">
                   <input type="hidden" name="search_param" value="all" id="search_param">
                   <form >
@@ -48,16 +48,19 @@
                                       <td>
                                           <span>{{acc.username}}</span>
                                       </td>
+                                      <td>
+                                        <span>{{acc.address.geo.lat}}</span>
+                                    </td>
                                   </tr>
                               </tbody>
                           </div>
                           <div class="table-responsive table table-hover ">
-                              <thead>
+                              <!-- <thead>
                                   <tr>
                                       <th class="dropdownHeading"></th>
                                   </tr>
-                              </thead>
-                              <tbody>
+                              </thead> -->
+                              <!-- <tbody>
                                   <tr class="hover-link">
                                       <td>
                                           <Span></Span>
@@ -66,15 +69,15 @@
                                           <span></span>
                                       </td>
                                   </tr>
-                              </tbody>
+                              </tbody> -->
                           </div>
-                          <div class="table-responsive table table-hover ">
-                              <thead>
+                      <!--    <div class="table-responsive table table-hover ">
+                               <thead>
                                   <tr>
                                       <th class="dropdownHeading"></th>
                                   </tr>
-                              </thead>
-                              <tbody>
+                              </thead> -->
+                              <!-- <tbody>
                                   <tr class="hover-link"  (click)="selectCategory(group.desc,group.category)">
                                       <td>
                                           <Span>group.desc</Span>
@@ -83,9 +86,9 @@
                                           <span>group.label</span>
                                       </td>
                                   </tr>
-                              </tbody>
-                          </div>
-                          <div class="table-responsive table table-hover ">
+                              </tbody> 
+                          </div>-->
+                          <!-- <div class="table-responsive table table-hover ">
                               <thead>
                                   <tr>
                                       <th class="dropdownHeading"></th>
@@ -101,13 +104,13 @@
                                       </td>
                                   </tr>
                               </tbody>
-                          </div>
+                          </div> -->
                       </mat-card>
 
                   </form>
 
               </mat-tab>
-              <mat-tab label="Profiles">
+              <!-- <mat-tab label="Profiles">
                   <form class="example-form" (keydown)="keyDownFunction($event,'Profiles')">
                       <mat-form-field class="example-full-width">
                           <input matInput placeholder="Search for a Profile" name="x" autocomplete="off">
@@ -115,23 +118,23 @@
                       <mat-card>
                       </mat-card>
                   </form>
-              </mat-tab>
+              </mat-tab> -->
               <!-- || searchService.getFormChange()  -->
-              <mat-tab label="Programs">
+              <!-- <mat-tab label="Programs">
                   <form class="example-form" (keydown)="keyDownFunction($event,'Programs')">
                       <mat-form-field class="example-full-width">
                           <input matInput placeholder="Search for a Program" name="x"
                             autocomplete="off">
-                          <!-- (ngModelChange)="getPrograms()" -->
+                           (ngModelChange)="getPrograms()" 
                       </mat-form-field>
                       <mat-card>
                       </mat-card>
 
                   </form>
-              </mat-tab>
+              </mat-tab> -->
           </mat-tab-group>
           <!-- Search dropdown div end -->
-      </mat-card>
+        </div>
   </div>
   <div style="margin-top: 20px;">
       <!-- <mat-card class="profile-prog-card"> -->
