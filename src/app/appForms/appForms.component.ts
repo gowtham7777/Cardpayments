@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { PeriodicElement } from '../model/PeriodicElement';
 import { PaymentService } from '../services/payments.service';
-import { MatTableDataSource, MatSort } from '../../../node_modules/@angular/material';
+//import { MatTableDataSource, MatSort } from '../../../node_modules/@angular/material';
 
 @Component({
   selector: 'app-forms',
@@ -30,14 +30,14 @@ export class AppForms implements OnInit {
     value: "Symbol"
   }];
   displayedColumns = [];
-  @ViewChild(MatSort) sort: MatSort;
+  //@ViewChild(MatSort) sort: MatSort;
   ngOnInit() {
     this.displayedColumns = this.columnNames.map(x => x.id);
     this.createTable();
   }
 
   createTable() {
-    this.dataSource = new MatTableDataSource(this._paymentService.activePromotions);
-    this.dataSource.sort = this.sort;
+  //  this.dataSource = new MatTableDataSource(this._paymentService.activePromotions);
+  //  this.dataSource.sort = this.sort;
   }
  }

@@ -1,0 +1,334 @@
+<style>
+    .nav  li active{
+  background-color:#EBEBEB !important;
+}
+
+.nav > li > a:focus{
+  background-color:#EBEBEB !important;
+}
+
+  .content {
+   width: 100%;
+   height: 1000px;
+    padding-top:20px;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  .nav li a {
+    color: #605B57;
+    cursor: pointer;    
+  }
+.nav li a:active{
+    background-color: #EBEBEB;
+}
+
+.nav .nav-item .li .a active{
+  background-color:#FF0000 !important;
+  padding-right: 20px;
+}
+
+.nav .nav-item .li active{
+  background-color:#EBEBEB !important;
+  padding-right: 20px;
+}
+
+.nav > li > a:focus{
+  background-color:#EBEBEB !important;
+  cursor: pointer;
+}
+
+ .nav .nav-item{
+   padding-right: 20px;
+ }
+
+ .a{
+cursor: pointer;
+ }
+ .nav .open > a:hover{
+       background-color:#fff; 
+}
+.table tr, .table td, .table th {border: 0!important;}
+
+.predictionFont{
+font-family: Source Sans Pro;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 18px;
+text-align: right;
+letter-spacing: 0.03em;
+text-transform: capitalize;
+
+color: #000000;
+}
+
+.predictionTitle{
+font-family: Source Sans Pro;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 24px;
+padding-left: 10px;
+color: #121212;
+}
+
+</style>
+
+<div>
+
+   
+<div>
+  <div *ngIf="showExecutive">
+   
+  <div class="row w-100" style="background-color: #F4F4F4;">
+
+       <div class="col-9">
+        <div class="row" style="font-family: Source Sans Pro;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 45px;
+        padding-left: 97px;
+        padding-top: 60px;
+        color: #4A4A4A;"> 
+          Commitment Trends
+         </div>
+          <div class="row" style="background-color: #F4F4F4;border-bottom: 0px;padding-top: 20px;
+                      font-family: Source Sans Pro;
+                     padding-bottom: 60px;
+                     font-style: normal;
+                     font-weight: normal;
+                      font-size: 16px;
+                     color: #605B57;
+                    line-height: 14px;">
+                    <div class="col-4"> </div>
+                    <div class="col-8"> 
+      <ul class="nav">
+        <li class="nav-item">
+          <a (click)="switch()">Toggle</a>
+        </li>
+        <li class="nav-item">
+          <a (click)="month()">Month</a>
+        </li>
+        <li class="nav-item">
+          <a (click)="yearToDate()">YTD</a>
+        </li>
+        <li class="nav-item">
+          <a (click)="threeMonths()">Trailing 3-M Avg</a> 
+        </li>
+        <li class="nav-item">
+          <a  (click)="sixMonths()" >Trailing 6-M Avg</a>
+        </li>
+        <li class="nav-item">
+          <a (click)="twelveMonths()">Trailing 12-M Avg</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+         
+    <div class="row w-100" style="padding-left: 100px;"> 
+        
+      <div class="row w-100"> 
+        <div class="col w-50" style="padding: 0px 0px 0px 0px;">
+          <div class="col w-100">
+            <app-commitments-confirmed-chart 
+              [highlightedValue]="commitmentValue"
+              [chartData]="commitmentsConfirmed"
+              [positiveData]="positiveData"
+              [selectedDuration]="selectedDuration"
+              commitmentsConfirmedChart="true"
+              [duration]="duration"
+              #mfCConfirmed
+              chartName="Commitments Confirmed">
+            </app-commitments-confirmed-chart>
+          </div>
+       </div>
+      
+          <div class="col w-50"  style="padding: 0px 0px 0px 0px;">
+                <div class="col w-100">
+                    <app-commitments-confirmed-chart 
+                      [highlightedValue]="confirmedUPBCount"
+                      [chartData]="confirmedUPB"
+                      [positiveData]="positiveData"
+                      confirmedUpb="true"
+                      #mfConfirmedUpb
+                      [duration]="duration"
+                      chartName="Confirmed Peas">
+                    </app-commitments-confirmed-chart>
+                </div>  
+                </div>  
+             
+      </div>
+  
+      <div class="row w-100" style="padding-top: 20px;"> </div>
+
+                  <div class="row w-100"> 
+                    <div class="col w-50"  style="padding: 0px 0px 0px 0px;">
+                      <div class="col w-100">
+                        <app-commitments-confirmed-chart 
+                              [highlightedValue]="cleanRateCount"
+                              [chartData]="cleanRate"
+                              [positiveData]="!positiveData"
+                              [duration]="duration"
+                              avgCleanRate="6"
+                              #mfCleanRate
+                              [chartValuesMf]="chartValuesMf.asObservable()"
+                              [goalValue]="goalCleanRate"
+                              [cleanRateChart]="true"
+                              chartName="Clean Rate">
+                          </app-commitments-confirmed-chart>
+                        </div>
+                    </div>
+                    <div class="col w-50"  style="padding: 0px 0px 0px 0px;">
+                      <div class="col w-100">
+                          <app-commitments-confirmed-chart 
+                          [highlightedValue]="confirmedSLACount"
+                          [chartData]="cleanRate"
+                          [positiveData]="!positiveData"
+                          [duration]="duration"
+                          avgCleanRate="40"
+                          #mfSLA 
+                          [ccWithSLAChart]="true"
+                          [goalValue]="goalCCUpb"
+                          chartName="Commitments Confirmed Smart">
+                      </app-commitments-confirmed-chart>
+                            </div>    
+                   </div>
+                  </div>
+                </div>
+                <div class="row"> 
+                  <!-- <div>
+                    <canvas
+                        id="barConfirmedCommits" #barConfirmedCommits
+                        baseChart
+                        [chartType]="barChartType"
+                        [datasets]="chartData"
+                        [labels]="lineChartLabels"
+                        [datasets]="chartData"
+                        [options]="chartOptions"
+                        
+                        >
+                    </canvas>
+                  </div> -->
+
+                </div>
+  </div> 
+     <div class="col-3" style="padding-left:0px;margin-top: 30px;padding-top:25px;background-color: #FFFFFF;height: 312px;">
+      <span class="predictionTitle">Predictions</span>
+
+        <table class="table predictionFont">
+         <thead><tr><th scope="col "><p>&nbsp;</p></th>
+          <th scope="col">Preceding 3 Months</th>
+          <th scope="col">Predictive 3 Months</th>
+          </tr></thead><tbody>
+          <tr><th scope="row"></th><td>Quoted</td><td>23</td><td>23</td></tr>
+          <tr><th scope="row"></th><td>Under Application</td><td>23</td><td>23</td></tr>
+          <tr><th scope="row"></th><td>Confirmed</td><td>23</td><td>23</td></tr>
+          <tr><th scope="row"></th><td>Aquired</td><td>23</td><td>23</td></tr>
+          </tbody></table>
+   </div> 
+   </div>
+</div>
+
+<div *ngIf="!showExecutive">
+<div *ngIf="!showCharts" style="padding-top: 100px;" class="d-flex justify-content-center">
+<div  class="spinner-border" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+</div>
+<div *ngIf="showCharts">
+  <div  style="background-color: #F4F4F4;border-bottom: 0px;padding-top: 20px;font-family: Source Sans Pro;
+padding-right: 80px;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+color: #605B57;
+line-height: 14px;">
+    <ul class="nav">
+      <li class="nav-item mx-auto">
+      </li>
+      <li class="nav-item">
+        <a (click)="switch()">Toggle</a>
+      </li>
+      <li class="nav-item">
+        <a (click)="month()">Month</a>
+      </li>
+      <li class="nav-item">
+        <a (click)="yearToDate()">YTD</a>
+      </li>
+      <li class="nav-item">
+        <a (click)="threeMonths()">Trailing 3-M Avg</a> 
+      </li>
+      <li class="nav-item">
+        <a  (click)="sixMonths()" >Trailing 6-M Avg</a>
+      </li>
+      <li class="nav-item">
+        <a (click)="twelveMonths()">Trailing 12-M Avg</a>
+      </li>
+    </ul>
+</div>
+
+<div class="content" style="background-color: #F4F4F4;">
+<div class="row h-10"> </div>
+<div class="row h-40" >
+  <div class="col h-50">
+    <app-commitments-confirmed-chart 
+    [highlightedValue]="commitmentValue"
+    [chartData]="commitmentsConfirmed"
+    [positiveData]="positiveData"
+    [selectedDuration]="selectedDuration"
+    commitmentsConfirmedChart="true"
+    [duration]="duration"
+    #mfCConfirmed
+    chartName="Commitments Confirmed">
+  </app-commitments-confirmed-chart>
+  </div>
+  <div class="col h-50">
+  <app-commitments-confirmed-chart 
+  [highlightedValue]="confirmedUPBCount"
+  [chartData]="confirmedUPB"
+  [positiveData]="positiveData"
+  confirmedUpb="true"
+  #mfConfirmedUpb
+  [duration]="duration"
+  chartName="Confirmed Peas">
+</app-commitments-confirmed-chart>
+</div>
+</div>
+
+<div class="row h-10" style="padding: 10px 10px 10px 10px;"> </div>
+<div class="row h-40">
+  <div class="col h-50">
+    <app-commitments-confirmed-chart 
+    [highlightedValue]="cleanRateCount"
+    [chartData]="cleanRate"
+    [positiveData]="!positiveData"
+    [duration]="duration"
+    avgCleanRate="6"
+    #mfCleanRate
+    [chartValuesMf]="chartValuesMf.asObservable()"
+    [goalValue]="goalCleanRate"
+    [cleanRateChart]="true"
+    chartName="Clean Rate">
+  </app-commitments-confirmed-chart>
+  </div>
+  <div class="col h-50">
+  <app-commitments-confirmed-chart 
+     [highlightedValue]="confirmedSLACount"
+     [chartData]="cleanRate"
+     [positiveData]="!positiveData"
+     [duration]="duration"
+     avgCleanRate="40"
+     #mfSLA 
+     [ccWithSLAChart]="true"
+     [goalValue]="goalCCUpb"
+    chartName="Commitments Confirmed Smart">
+  </app-commitments-confirmed-chart>
+</div> 
+</div> 
+</div>
+</div>
+
+</div> <!-- end of executive dashboard-->
+</div>

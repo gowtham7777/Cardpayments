@@ -1,0 +1,131 @@
+<style>
+ a {
+    color: #FFFFFF;
+    
+}
+
+.nav  li active{
+  background-color:#EBEBEB !important;
+}
+
+.nav > li > a:focus{
+  background-color:#EBEBEB !important;
+}
+
+.navbar-nav{
+    padding-left: 20px;
+}
+
+.navbarTitles {
+    
+    top: 90px;
+    left: 0;
+    right: 0;
+    padding-left: 40px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #05314D;
+    color: white;
+    font-weight: 600;
+  }
+
+  .hdCommitment{
+    padding-left: 96px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 22px;
+    color: #FFFFFF;
+    font-family: Source Sans Pro;
+  }
+
+  .content {
+   width: 100%;
+   height: 1000px;
+    padding-top:20px;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  .navbarTitles {
+    
+    top: 90px;
+    left: 0;
+    right: 0;
+    padding-left: 40px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #05314D;
+    color: white;
+    font-weight: 600;
+  }
+
+  .hdCommitment{
+    padding-left: 96px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 22px;
+    color: #FFFFFF;
+    font-family: Source Sans Pro;
+  }
+
+  .content {
+   width: 100%;
+   height: 1000px;
+    padding-top:20px;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+</style> 
+<a class="nav-item mx-auto">
+</a>
+
+<div style="width: 100%;height: 100%;">
+
+  <div class="navbarTitles" role="banner">
+   
+    <span></span>
+    <span class="hdCommitment"> Transparency</span>
+      <div class="spacer"></div>
+      <span class="settingsSpacer">  </span>
+  </div> 
+
+
+<nav class="navbar" style="padding-top: 0px; background: #085280;
+font-family: Source Sans Pro;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 24px;
+padding-left: 860px;
+color: #FFFFFF;
+">
+    
+   
+
+     <a class="navbar-nav nav-item nav-link "
+     routerLink="/dashboard">Dashboard
+      <span class="sr-only"></span></a>
+
+       
+           <a class="navbar-nav nav-item nav-link "
+              routerLink="/commitments">Commitments
+               <span class="sr-only"></span></a>
+
+               <a class="navbar-nav nav-item nav-link "
+               routerLink="/lenders">Lenders
+                <span class="sr-only"></span></a>
+
+
+                <a class="navbar-nav nav-item nav-link "
+                routerLink="/analysts">Analysts
+                 <span class="sr-only"></span></a>
+ 
+   </nav>
+   <router-outlet></router-outlet>
+   </div>
+ 

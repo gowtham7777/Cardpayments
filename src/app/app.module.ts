@@ -20,6 +20,16 @@ import { AppErrorHandler }     from './app-error-handler';
 import { MessageService }       from './message.service';
 import { TemplateDrivenFormsComponent } from './template-driven-forms/template-driven-forms.component';
 import { FormsComponent } from './forms/forms.component';
+import { CommonModule, CurrencyPipe, DatePipe } from '@angular/common'; 
+import { ExecutiveComTrendsService } from './services/executive-com-trends.service';
+import { ChartsModule } from 'ng2-charts';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { CommitmentsConfirmedChartComponent } from './components/charts/commitments-confirmed-chart/commitments-confirmed-chart.component';
+import { MfNavigationBarComponent } from './components/mf-navigation-bar/mf-navigation-bar.component';
+import { MfdashboardComponent } from './components/mfdashboard/mfdashboard.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MfCommitmentsComponent } from './components/mf-commitments/mf-commitments.component';
+
  
 @NgModule({
   declarations: [
@@ -31,7 +41,11 @@ import { FormsComponent } from './forms/forms.component';
     AppPdfGenComponent,
     StudendInfoComponent,
     TemplateDrivenFormsComponent,
-    FormsComponent
+    FormsComponent,
+    MfNavigationBarComponent,
+    MfdashboardComponent,
+    MfCommitmentsComponent,
+    CommitmentsConfirmedChartComponent
   ],
   imports: [
     BrowserModule,
@@ -40,9 +54,17 @@ import { FormsComponent } from './forms/forms.component';
     FormsModule,
     BrowserAnimationsModule,    
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
+    BrowserModule,
+    CommonModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ChartsModule,
+    NoopAnimationsModule,
+    NgbModule,
+    MatProgressSpinnerModule
   ],
-  providers: [  MessageService, AppErrorHandler,studentService, PaymentService, UpdateTotalService
+  providers: [  DatePipe, ExecutiveComTrendsService, MessageService, AppErrorHandler,studentService, PaymentService, UpdateTotalService
         
   ], 
   bootstrap: [AppComponent]
