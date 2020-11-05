@@ -14,13 +14,13 @@ import { TemplateDrivenFormsComponent } from './template-driven-forms/template-d
  // import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/charts', pathMatch: 'full' },
     { path: 'cards', component: CardsComponent },
    { path: 'payments', component: PaymentsComponent },
    { path: 'forms', component: AppForms },
    { path: 'pdf', component:  AppPdfGenComponent},
    { path: 'students', component:  StudendInfoComponent},
-   { path: 'dashboard', component:  MfdashboardComponent},
+   { path: 'charts', component:  MfdashboardComponent},
    { path: 'commitments', component: MfCommitmentsComponent },
       // { path: 'diffForms', component:  FormsComponent,
       //     children : [ { path: 'newUser', component:  TemplateDrivenFormsComponent},
