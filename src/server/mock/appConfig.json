@@ -1,0 +1,8 @@
+{
+    "productOfferDetails":{
+        "skuId":11606,
+        "productCode":"Score Values"
+    },
+    "queryParamsMap":{"INTENT":"FREEZE_LOCK"},
+    "htmlAllowed":true
+}

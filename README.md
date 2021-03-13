@@ -4,6 +4,11 @@ Download nodeJS and npm then angular cli, using npm install -g @angular/cli
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
 
+# To run express server for rest api
+npm run serverCards
+
+e.g. http://localhost:3000/rest/1.0/appConfig
+
 ## Development server
 
 npm install --save-dev node-sass if node-sass was not in package.json

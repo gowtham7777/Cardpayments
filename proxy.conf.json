@@ -1,0 +1,18 @@
+{
+    "/rest/1.0/saveConsumer":{
+    "target":"http://localhost:3000",
+    "secure":false,
+    "pathRewrite":{
+        "^/saveConsumer":""
+    },
+    "loglevel":"debug"
+    },
+    "/rest/1.0/appConfig":{
+        "target":"http://localhost:3000",
+        "secure":false,
+        "pathRewrite":{
+            "^/appConfig":""
+        },
+        "loglevel":"debug"
+        }
+}

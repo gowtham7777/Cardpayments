@@ -130,6 +130,23 @@ export class MfdashboardComponent implements OnInit {
     this.goalCCUpb = "6.5 " + "hrs";
     this.twelveMonthsCommitments.confirmedSLAGoal = "6.5";
     this.goalCCUpb = this.twelveMonthsCommitments.confirmedSLAGoal + "hrs";
+
+    this.monthlyCommitments = new Commitments();
+    this.monthlyCommitments.cleanRate = [19, 1, 30, 50, 20, 26, 21, 2, 18, 20, 22, 6];
+    this.monthlyCommitments.commitmentsConfirmed = [45, 6, 8, 26, 2, 4, 24, 4, 69, 62, 6, 79];
+    this.monthlyCommitments.confirmedUPB = ["$9B", "$23B", "$24B", "$3B", "$51B", "$18B", "$12B", "$74B", "$9B", "$24B", "$16B", "$9B"];
+    this.monthlyCommitments.confirmedUPBCount = "4290";
+    this.monthlyCommitments.cleanRateCount = "722";
+    this.monthlyCommitments.confirmedSLACount = "89";
+    this.monthlyCommitments.commitmentValue = "199";
+    this.monthlyCommitments.commitmentsConfirmedCount = 632;
+    this.ccWithSLA = [54, 5, 62, 27, 37, 45, 77, 27, 12, 81, 19, 1];
+    this.monthlyCommitments.ccWithSLA = [34, 5, 62, 97, 67, 89, 62, 5, 7, 189, 21, 41];
+    this.goalCCUpb = "9 " + "hrs";
+    this.monthlyCommitments.confirmedSLAGoal = "2.5";
+    this.goalCCUpb = this.monthlyCommitments.confirmedSLAGoal + "hrs";
+
+
     this.selectedDuration = this.twelveMonthsCommitments;
 
     //commitmentValue

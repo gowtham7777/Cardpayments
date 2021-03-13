@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   environmentName: 'Dev',
   baseurl:"https://localhost:9009",
-  apiUrl: 'https://jsonplaceholder.typicode.com/'
+  apiUrl: 'https://jsonplaceholder.typicode.com/',
+  appConfigUrl:'../rest/1.0/appConfig'
 };
 
 /*
