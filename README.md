@@ -42,3 +42,12 @@ on root, run command, json-server mockData.json, runs on localhost:3000 using  j
 #json-server --watch mockData.json to reload automatically the browser when the JSON file is #modified
 #Installation npm install -g json-server
 if module exists and unable to pick it up, delete node_modules folder and run npm install 
+
+protactor set-up
+npm install -g protractor
+
+npm i webdriver-manager -g --force
+
+webdriver-manager status
+
+webdriver-manager --proxy=http://<username>:<password>@XXx.XX.XXX.XX:XXXXX update
