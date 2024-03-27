@@ -11,6 +11,11 @@ e.g. http://localhost:3000/rest/1.0/appConfig
 
 ## Development server
 
+# npm install --force 
+# npm -root -g to find the root folder in macbook
+#  sudo npm cache clean --force 
+# delete package-lock.json file if npm install is not working
+
 npm install --save-dev node-sass if node-sass was not in package.json
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
