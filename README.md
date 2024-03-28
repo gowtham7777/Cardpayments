@@ -4,6 +4,12 @@ Download nodeJS and npm then angular cli, using npm install -g @angular/cli
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
 
+# Angular CLI: 10.1.7
+# Node: 10.24.1
+# npm install -g @angular/cli@10.1.2 
+
+# node 12 or 14 or 18 wont work.
+
 # To run express server for rest api
 npm run serverCards
 
